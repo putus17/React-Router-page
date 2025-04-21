@@ -9,7 +9,7 @@ export default function User() {
             <h1>User Profile</h1>
             <div className="card">
                <section className='user-profile'>
-                <div className='user-avater'>{userId.charAt(0).toUpperCase()}</div>
+                <div className='user-avatar'>{userId.charAt(0).toUpperCase()}</div>
                 <section className='user-info'>
                 <h2>User #{userId}</h2>
                 <p>This page demonstrates how to use Url Parameters in React Router.</p>
@@ -20,3 +20,4 @@ export default function User() {
         </>
     )   
 }
+

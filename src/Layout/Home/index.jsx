@@ -1,11 +1,4 @@
-const reactRouterconcepts = [
-    'Basic Routing',
-    'Url Parameters',
-    'Nested Routes',   
-    'Protected Routes',
-    'Query Parameters',
-]
-
+import { reactRouterconcepts } from '../../Data'
 export default function Home() {
     return (
         <>

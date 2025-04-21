@@ -1,17 +1,32 @@
-import React from 'react'
-import Dashboard from './Layout/Dashboard'
-import NotFound from './Layout/NotFound'
-import Home from './Layout/Home'
-import User from './Layout/User'
+import { useState } from 'react'
+import { BrowserRouter } from 'react-router-dom'
 
-const App = () => {
-  return (
-    <div>
-      <Dashboard />
-      <NotFound />
-      <Home />
-      <User />
-    </div>
+import NavBar from './Component/NavBar'
+import { AppRoutes } from './Component/AppRoutes'
+
+function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
+
+  const handleLogin = () => {
+    setIsAuthenticated(true)
+  }
+
+  const handleLogout = () => {
+    setIsAuthenticated(false)
+  }
+
+  return (  
+    <BrowserRouter>
+      <div className='app'>
+        <NavBar handleLogout={handleLogout} isAuthenticated={isAuthenticated} />
+        <section className='page-container'>
+          <AppRoutes
+            handleLogin={handleLogin}
+            isAuthenticated={isAuthenticated}
+          />
+        </section>
+      </div>
+    </BrowserRouter>
   )
 }
 
